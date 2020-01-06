@@ -1,4 +1,5 @@
 1) Make sure you have containerd installed.
+2) fly -t tutorial execute -c example.yml -o image=. -p -i context=.
 
 Added SSH to parameters.
 
