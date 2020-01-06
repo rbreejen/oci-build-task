@@ -1,3 +1,5 @@
+Added SSH to parameters.
+
 # `oci-build` task
 
 A Concourse task for building [OCI
