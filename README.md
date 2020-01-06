@@ -1,3 +1,5 @@
+1) Make sure you have containerd installed.
+
 Added SSH to parameters.
 
 # `oci-build` task
