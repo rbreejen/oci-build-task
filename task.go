@@ -73,6 +73,12 @@ func Build(buildkitd *Buildkitd, outputsDir string, req Request) (Response, erro
 		)
 	}
 
+	if cfg.SSH != "" {
+		buildctlArgs = append(buildctlArgs,
+			"--ssh", "default="+cfg.SSH,
+		)
+	}
+
 	for _, arg := range cfg.BuildArgs {
 		buildctlArgs = append(buildctlArgs,
 			"--opt", "build-arg:"+arg,
