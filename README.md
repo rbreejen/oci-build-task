@@ -1,6 +1,3 @@
-1) Make sure you have containerd installed.
-2) fly -t tutorial execute -c example.yml -o image=. -p -i context=.
-
 Added SSH to parameters.
 
 # `oci-build` task
@@ -291,6 +288,6 @@ This repo contains an `example.yml`, which builds the image for the task
 itself:
 
 ```sh
-fly -t dev execute -c example.yml -o image=. -p
+fly -t dev execute -c example.yml -o image=. -p context=.
 docker load -i image.tar
 ```
