@@ -103,6 +103,15 @@ func (s *TaskSuite) TestTarget() {
 	s.NoError(err)
 }
 
+func (s *TaskSuite) TestSSH() {
+	s.req.Config.ContextDir = "testdata/ssh_file"
+	s.req.Config.Target = "working-target"
+	s.req.Config.SSH = "testdata/ssh_file/id_rsa"
+
+	_, err := s.build()
+	s.NoError(err)
+}
+
 func (s *TaskSuite) TestTargetFile() {
 	s.req.Config.ContextDir = "testdata/multi-target"
 	s.req.Config.TargetFile = "testdata/multi-target/target_file"

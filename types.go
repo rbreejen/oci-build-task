@@ -52,10 +52,10 @@ type Config struct {
 	Target     string `json:"target"      envconfig:"optional"`
 	TargetFile string `json:"target_file" envconfig:"optional"`
 
+	SSH string `json:"ssh"      envconfig:"SSH,optional"`
+
 	BuildArgs     []string `json:"build_args"      envconfig:"optional"`
 	BuildArgsFile string   `json:"build_args_file" envconfig:"optional"`
-
-	SSH string `json:"ssh"      envconfig:"optional"`
 
 	// Unpack the OCI image into Concourse's rootfs/ + metadata.json image scheme.
 	//

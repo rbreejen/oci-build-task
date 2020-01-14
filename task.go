@@ -74,8 +74,16 @@ func Build(buildkitd *Buildkitd, outputsDir string, req Request) (Response, erro
 	}
 
 	if cfg.SSH != "" {
+		err := os.Mkdir(".ssh", 0755)
+		sshPath := filepath.Dir("/.ssh/id_rsa")
+
+		err = ioutil.WriteFile(sshPath, []byte(cfg.SSH), 0644)
+		if err != nil {
+			return Response{}, errors.Wrap(err, "The SSH key could not be written to the .ssh directory")
+		}
+
 		buildctlArgs = append(buildctlArgs,
-			"--ssh", "default="+cfg.SSH,
+			"--ssh", "default="+sshPath,
 		)
 	}
 

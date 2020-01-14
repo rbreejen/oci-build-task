@@ -13,6 +13,7 @@ require (
 	github.com/onsi/ginkgo v1.9.0 // indirect
 	github.com/onsi/gomega v1.6.0 // indirect
 	github.com/pkg/errors v0.8.1
+	github.com/rootless-containers/rootlesskit v0.7.1 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.4.0
 	github.com/u-root/u-root v6.0.0+incompatible
